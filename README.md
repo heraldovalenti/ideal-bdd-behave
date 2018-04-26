@@ -27,7 +27,7 @@ Open a terminal on the root of this project and execute the following:
 ```commandline
 behave
 ```
-This will execute all the existing scenarios on the project and show you the results in the console. 
+This will execute all the existing scenarios on the project and show you the results in the terminal output. 
 
 ## Running project with PyCharm
 First, the project must be loaded:
@@ -42,3 +42,26 @@ To execute a single scenario just locate the associated unit test file, right cl
 ### Debugging a single scenario
 The procedure to debug a single scenario is almost the same as running a single scenario. Just add some breakpoints in
 the code, right click on the unit test file and select  *Debug 'Unitests in unittest...'* from the contextual menu.
+
+# Adding new scenarios
+Adding new scenarios can be done with these steps:
+1. Creating a new .feature file and describe de scenario in Gherkin language.
+2. Creating a new unit test class so the new scenario can be executed debugged. This new class needs to extend
+base_test.py class, define a method named with the prefix "test_" that performs the execution and a "setUp" method which
+defines the new scenario name, like the following example:
+```python
+import unittest
+
+from features.base_test import BaseTest
+class MyNewFeature(BaseTest):
+
+    def setUp(self):
+        self.feature_list = 'my_feature.feature'
+
+    def test_scenario(self):
+        self.execute_scenario()
+
+
+if __name__ == '__main__':
+    unittest.main()
+```

@@ -3,10 +3,10 @@ import unittest
 from features.base_test import BaseTest
 
 
-class SimtlixJobsFeature(BaseTest):
+class GoogleCertFeature(BaseTest):
 
     def setUp(self):
-        self.feature_list = 'simtlix_jobs.feature'
+        self.feature_list = 'google_cert.feature'
 
     def test_scenario(self):
         self.execute_scenario()

@@ -8,3 +8,9 @@ class MainPageLocators(object):
 
 class CareersPageLocators(object):
     SEARCH_CATEGORIES = (By.ID, 'search_categories')
+
+
+class CredentialNetPageLocators(object):
+    VERIFY_BUTTON = (By.XPATH, '//*[@id="credential-wrapper"]/div/div[1]/div[2]/div/div/div[2]/div[2]/p/button')
+    VERIFIED_LABEL = (By.XPATH, '//*[@id="credential-wrapper"]/div/div[1]/div[2]/div/div[2]/div[2]/div[1]/h4/strong')
+    TITLE_LABEL = (By.XPATH, '//*[@id="credential-wrapper"]/div/div[2]/div/div/div[2]/h2/a')
